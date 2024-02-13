@@ -1,17 +1,18 @@
-const users = fetch('https://jsonplaceholder.typicode.com/users');
+// Async | Await
 
-let mon = [];
+const myUsers = {
+   userList: []
+}
 
-fetch('https://jsonplaceholder.typicode.com/users')
-   .then(response => response.json())
-   .then(data => {
-      data.forEach(user => {
-         console.log(user);
-      })
-      mon = data;
-   });
+const myCoolFunction = async () => {
+   const response = await fetch('https://jsonplaceholder.typicode.com/users');
+   return response.json();
+}
+myCoolFunction();
 
+const anotherFunc = async () => {
+   const data = await myCoolFunction();
+   console.log(data);
+}
 
-console.log(mon);
-   
-
+anotherFunc()
