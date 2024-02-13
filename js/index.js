@@ -1,19 +1,14 @@
 const API = 'https://jsonplaceholder.typicode.com/users';
-// Async | Await
+const APILINK = 'https://icanhazdadjoke.com/';
 
-const myUsers = {
-   userList: []
+// 2nd parameter of fetch
+
+const joke = async () => {
+   const resp = await fetch('https://icanhazdadjoke.com');
+   return await resp.json();
 }
 
-const myCoolFunction = async () => {
-   const response = await fetch('https://jsonplaceholder.typicode.com/users');
-   return response.json();
-}
-myCoolFunction();
+const data = await joke();
+console.log(data);
 
-const anotherFunc = async () => {
-   const data = await myCoolFunction();
-   console.log(data);
-}
-
-anotherFunc()
+// 40
