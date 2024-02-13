@@ -1,13 +1,17 @@
-const myPromise = new Promise((resolve, reject) => {
-   const error = true;
-   if (!error) {
-      resolve('Yes! resolved the promise!');
-   } else {
-      reject("No! rejected the promise!");
-   }
-});
+const users = fetch('https://jsonplaceholder.typicode.com/users');
 
-myPromise
-   .then(value => value + 1)
-   .then(update => console.log(update))
-   .catch(err => console.warn("Something went wrong"));
+let mon = [];
+
+fetch('https://jsonplaceholder.typicode.com/users')
+   .then(response => response.json())
+   .then(data => {
+      data.forEach(user => {
+         console.log(user);
+      })
+      mon = data;
+   });
+
+
+console.log(mon);
+   
+
