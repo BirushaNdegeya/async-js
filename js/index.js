@@ -1,3 +1,4 @@
+const API = 'https://jsonplaceholder.typicode.com/users';
 // Async | Await
 
 const myUsers = {
